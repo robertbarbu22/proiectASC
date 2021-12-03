@@ -1,44 +1,52 @@
-a = "00000011"
-b = "b"
-#a = ord(a)
-b = ord(b)
-#print(b)
-#a=bin(a)
-b=bin(b)
+f = open( "encrypted_text", "r")
+g = open( "decrypted_text", "w")
+key = input("key: ")
+text = f.read()
+key = key* (len(text)//len(key)+1)
+#sir_b= [0 for i in range(len(text))]
+ct=0
+#key = list(key)
+cheie_binar = ""
 
-#a = a[2:]
-b = b[2:]
+for i in key:
+    a = ord(i)
+    a = bin(a)
+    a = a[2:]
+    if(len(a)<8):
+        a = "0" * (8-len(a))+a
+    cheie_binar = cheie_binar + a
 
-# if(len(a)<8):
-#     a = (8-len(a))*"0" + a
-if(len(b)<8):
-    b = (8-len(b))*"0" + b
-
-a1 = []
-for i in a:
-    a1 =a1 + [i]
-a = a1
-
-b = list(b)
-
+sir_final = ""
+cheie_binar = list(cheie_binar)
 ct = 0
-for i in a:
-    a[ct] = int(a[ct])
-    b[ct] = int(b[ct])
-    a[ct] = a[ct]^b[ct]
-   # print(a[ct],end="")
+for i in text:
+    a = int(i)
+    b = int(cheie_binar[ct])
     ct += 1
+    x = a^b
+    if x == 0:
+        sir_final = sir_final + "0"
+    else:
+        sir_final = sir_final + "1"
 
-sum = 0
-p = 0
+sir_final = sir_final[::-1]
+
+suma = 0
 ct = 0
-a.reverse()
+sir_decriptat = ""
+for i in sir_final:
+    if ct == 8:
+         ct = 0
+         x = chr(suma)
+         sir_decriptat = sir_decriptat + x
+         suma = 0
 
-for i in a:
-    if a[ct]==1:
-        sum = sum + 2**p
-    p += 1
+    if i == "1":
+        suma = suma + 2**ct
     ct += 1
+x = chr(suma)
+sir_decriptat = sir_decriptat + x
 
-#print()
-print(chr(sum))
+sir_decriptat = sir_decriptat[::-1]
+g.write(sir_decriptat)
+g.close()

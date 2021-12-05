@@ -1,2 +1,0 @@
-# proiectASC
-Proiect codare

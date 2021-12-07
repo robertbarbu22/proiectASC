@@ -17,5 +17,6 @@ Parola echipei adverse, echipa HeliXor, este:
 HeliKopter10
 
 Pentru a afla parola ne-am folosit de fisierele de input
-si output si le-am xorat.
+si output si le-am xorat caracter cu caracter pana am
+observat ca se repeta o secventa de caractere.
  

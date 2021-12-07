@@ -11,6 +11,8 @@ decriptat in fisierul "decrypted_text".
 
 Partea II
 
+Echipa A.R.C. vs Echipa HeliXor
+
 Parola echipei adverse, echipa HeliXor, este: 
 HeliKopter10
 

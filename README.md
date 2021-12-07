@@ -7,4 +7,4 @@ fisierul "encrypted_text".
 
 Pentru a decripta textul ne-am folosit de fisierul "encrypted_text",
 unde am xorat fiecare cracter cu parola in binar si am afisat textul
-decriptat in fisierul "decrypted_text"
+decriptat in fisierul "decrypted_text".
